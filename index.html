@@ -101,7 +101,7 @@
       if (response && !response.error) {
          console.log('Accessing user posts ...');
          var datetime=response.data[0].created_time;
-          document.getElementById('content').innerHTML += parseDateString(datetime).toLocalString();
+          document.getElementById('content').innerHTML += parseDateString(datetime).toLocaleString();
       }
     });
   }
