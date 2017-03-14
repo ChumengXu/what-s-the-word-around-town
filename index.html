@@ -18,7 +18,8 @@
       // Logged into your app and Facebook.
       testAPI();
       UserHometown();
-      UserPostsTime();
+      //UserPostsTime();
+      LatestLocation();
     } else {
       // The person is not logged into your app or we are unable to tell.
       document.getElementById('status').innerHTML = 'Please log ' +
@@ -97,6 +98,18 @@
       }
     });    
   }
+  
+  function LatestLocation(){
+    FB.api(
+    "/me/posts",{"with": "location"},{fields: 'place'},
+    function (response) {
+      if (response && !response.error) {
+         console.log('Accessing user posts ...');
+        document.getElementById('content').innerHTML +='Latest tagged location:'+ response.place.name+"<br>";
+      }
+    });
+  }
+  
   
   function UserPostsTime(){
     FB.api(
