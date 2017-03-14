@@ -101,7 +101,7 @@
   
   function LatestLocation(){
     FB.api(
-    "/me/posts",{"with": "location"},
+    "/me/posts",{"with": "location"},{fields:'place'},
     function (response) {
       if (response && !response.error) {
          console.log('Accessing user posts ...');
