@@ -105,7 +105,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
          document.getElementById('content').innerHTML +=
          response.name+'\'s hometown:  '+'<span class=\"w3-tag\">'+user_hometown+'</span>'+";       ";
            document.getElementById('twitter').innerHTML +=
-        '<a class=\"twitter-timeline\"  href=\"https://twitter.com/hashtag/'+user_hometown+'\" data-widget-id=\"841554646904766464\" style="display: inline-block">#'+user_hometown+' Tweets</a>';
+        '<a class=\"twitter-timeline\"  href=\"https://twitter.com/hashtag/'+user_hometown+'\" data-widget-id=\"841554646904766464\">#'+user_hometown+' Tweets</a>';
         twttr.widgets.load(document.getElementById("twitter"));
       }
     });    
@@ -127,7 +127,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         }
         document.getElementById('content').innerHTML +='Latest tagged location:'+ '<span class=\"w3-tag\">'+latest_location+'</span>'+"<br><br>";
         document.getElementById('latest').innerHTML +=
-        '<a class=\"twitter-timeline\"  href=\"https://twitter.com/hashtag/'+latest_location+'\" data-widget-id=\"841700736677355521\" style="display: inline-block">#'+latest_location+' Tweets</a>';
+        '<a class=\"twitter-timeline\"  href=\"https://twitter.com/hashtag/'+latest_location+'\" data-widget-id=\"841700736677355521\"#'+latest_location+' Tweets</a>';
         twttr.widgets.load(document.getElementById("latest"));
       }
     });
@@ -174,17 +174,18 @@ function TopTweetHometown(hometown){
 <fb:login-button scope="public_profile,email,user_hometown,user_posts,user_location" onlogin="checkLoginState();" 
                  data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true">
 </fb:login-button>
+ <br>
     
 <div id="status">
 </div>
 <div id="content">
 </div>
   
-<div id="twitter">
+<div id="twitter" style="display: inline-block;">
      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>         
   </div>
   
-<div id="latest">
+<div id="latest" style="display: inline-block;">
      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>         
   </div>
 </div>
