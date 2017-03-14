@@ -104,12 +104,9 @@
     function (response) {
       if (response && !response.error) {
          console.log('Accessing user posts ...');
-         var count;
-         for(count = 0; count < 10; count++){
-           var datetime=response.data[count].created_time;
-           var conv_date=parseDateString(datetime).toLocaleString();
-          document.getElementById('content').innerHTML += conv_date+"<br>";
-        }
+         var datetime=response.data[0].created_time;
+         var conv_date=parseDateString(datetime).toLocaleString();
+        document.getElementById('content').innerHTML +='Latest post created time:'+ conv_date+"<br>";
       }
     });
   }
