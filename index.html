@@ -17,7 +17,7 @@
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
       testAPI();
-      UserLocation();
+      UserHometown();
       UserPostsTime();
     } else {
       // The person is not logged into your app or we are unable to tell.
@@ -82,16 +82,20 @@
     });
   }
   
-  function UserLocation(){
+  function UserHometown(){
     FB.api(
     "/me",{fields: 'name,first_name,hometown'},
     function (response) {
       if (response && !response.error) {
          console.log('Accessing profile ...');
+         var user_hometown=response.hometown.name.split(',')[0];
          document.getElementById('content').innerHTML +=
-         response.name+'\'s hometown: '+response.hometown.name+"<br>";
+         response.name+'\'s hometown: '+user_hometown+"<br>";
+           document.getElementById('twitter').innerHTML =
+        '<a class=\"twitter-timeline\"  href=\"https://twitter.com/hashtag/'+user_hometown+'\" data-widget-id=\"841554646904766464\">#'+user_hometown+' Tweets</a>'
+        +'<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\'http\':\'https\';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document,\"script\",\"twitter-wjs\");<\/script>';
       }
-    });
+    });    
   }
   
   function UserPostsTime(){
@@ -145,10 +149,10 @@ function TopTweetHometown(hometown){
 <div id="status">
 </div>
 <div id="content">
-   <a class="twitter-timeline"  href="https://twitter.com/hashtag/Beijing" data-widget-id="841554646904766464">#Beijing Tweets</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
 </div>
+  
+<div id="twitter">
+  </div>
 
 </body>
 </html>
