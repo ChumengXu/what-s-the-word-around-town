@@ -92,6 +92,19 @@
       }
     });
   }
+  
+  function UserPostsTime(){
+    FB.api(
+    "/me/posts",
+    function (response) {
+      if (response && !response.error) {
+         console.log('Accessing user posts ...');
+         document.getElementById('content').innerHTML +=
+         response.data[0].created_time;
+      }
+    });
+  }
+  
 </script>
 
 <!--
@@ -100,7 +113,7 @@
   the FB.login() function when clicked.
 -->
 
-<fb:login-button scope="public_profile,email,user_hometown" onlogin="checkLoginState();" 
+<fb:login-button scope="public_profile,email,user_hometown,user_posts" onlogin="checkLoginState();" 
                  data-max-rows="1" data-size="xlarge" data-show-faces="true" data-auto-logout-link="true">
 </fb:login-button>
     
