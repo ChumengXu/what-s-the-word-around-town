@@ -93,8 +93,9 @@
          response.name+'\'s hometown: '+response.hometown.name+"<br>";
          twttr.widgets.createTimeline(
         {
-          sourceType: 'url',
-          url:'https://twitter.com/search?q=%23Beijing%20until%3A2017-03-09'
+          sourceType: 'profile',
+          userID:'nytimes',
+          tweetLimit: '1'
         },
         document.getElementById('twitter')
         );
