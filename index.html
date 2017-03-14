@@ -105,8 +105,14 @@
     function (response) {
       if (response && !response.error) {
          console.log('Accessing user posts ...');
-        console.log(response.data[1]);
-        document.getElementById('content').innerHTML +='Latest tagged location:'+ response.data[1].message+"<br>";
+        console.log(response.data[0]);
+        if(reponse.data[0].place){
+          document.getElementById('content').innerHTML +='Latest tagged location:'+ response.data[0].place.name+"<br>";
+        }
+        else{
+          var latest_location= response.data[1].story.replace(/\s+/g, '').split('at')[1];
+          document.getElementById('content').innerHTML +='Latest tagged location:'+ latest_location+"<br>";
+        }
       }
     });
   }
