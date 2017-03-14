@@ -107,7 +107,7 @@
          var count;
          for(count = 0; count < 10; count++){
            var datetime=response.data[count].created_time;
-           var conv_date=parseDateString(datetime).toLocaleString().split(",")[0];
+           var conv_date=parseDateString(datetime).toLocaleString();
           document.getElementById('content').innerHTML += conv_date+"<br>";
         }
       }
@@ -117,14 +117,11 @@
   function parseDateString(dateStr) {  
     var dateDate = dateStr.split("T")[0];  
     var dateTime = dateStr.split("T")[1].substring(0, 8);  
-    var dateResult = new Date(Date.UTC(  
-        dateDate.split("-")[0], /* Year */  
-        dateDate.split("-")[1], /* Month */  
-        dateDate.split("-")[2], /* Day */  
-        dateTime.split(":")[0], /* Hour */  
-        dateTime.split(":")[1], /* Minute */  
-        dateTime.split(":")[2]  /* Second*/  
-    ));  
+    var dateResult = 
+        dateDate.split("-")[0]+'-'+ /* Year */  
+        dateDate.split("-")[1]+'-'+ /* Month */  
+        dateDate.split("-")[2]; /* Day */  
+    );  
     return dateResult;  
 }  
  
