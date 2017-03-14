@@ -83,12 +83,12 @@
   
   function UserLocation(){
     FB.api(
-    "/me/posts",{"with": "location"},
+    "/me?fields=hometown",
     function (response) {
       if (response && !response.error) {
-         console.log('Accessing feed ...');
+         console.log('Accessing profile ...');
          document.getElementById('content').innerHTML =
-         response.data[1].place.name;
+         response.name
       }
     });
   }
@@ -100,7 +100,7 @@
   the FB.login() function when clicked.
 -->
 
-<fb:login-button scope="public_profile,email,user_posts" onlogin="checkLoginState();" 
+<fb:login-button scope="public_profile,email,user_location" onlogin="checkLoginState();" 
                  data-max-rows="1" data-size="xlarge" data-show-faces="true" data-auto-logout-link="true">
 </fb:login-button>
     
