@@ -15,7 +15,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
  <header class="w3-container w3-center w3-padding-32"> 
   <h1><b>What's the word around town?</b></h1>
   <p> Missing home after moving? See what's happening in your hometown side by side with what's happening here.<br><br>
-   <span class="w3-tag">Feel the change</span></p>
+   <span class="w3-tag">Live in two places at once</span></p>
  </header>
 <script>
   // This is called with the results from from FB.getLoginStatus().
@@ -105,7 +105,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
          document.getElementById('content').innerHTML +=
          response.name+'\'s hometown:  '+'<span class=\"w3-tag\">'+user_hometown+'</span>'+";       ";
            document.getElementById('twitter').innerHTML +=
-        '<a class=\"twitter-timeline\"  href=\"https://twitter.com/hashtag/'+user_hometown+'\" data-widget-id=\"841731256014495744\">#'+user_hometown+' Tweets</a>';
+        '<a class=\"twitter-timeline\"  href=\"https://twitter.com/hashtag/'+user_hometown+'\" data-widget-id=\"841774705946308613\">#'+user_hometown+' Tweets</a>';
         twttr.widgets.load(document.getElementById("twitter"));
       }
     });    
@@ -127,7 +127,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         }
         document.getElementById('content').innerHTML +='Latest tagged location:'+ '<span class=\"w3-tag\">'+latest_location+'</span>'+"<br><br>";
         document.getElementById('latest').innerHTML +=
-        '<a class=\"twitter-timeline\"  href=\"https://twitter.com/hashtag/'+latest_location+'\" data-widget-id=\"841731053593231360\"#'+latest_location+' Tweets</a>';
+        '<a class=\"twitter-timeline\"  href=\"https://twitter.com/hashtag/'+latest_location+'\" data-widget-id=\"841774915384672256\"#'+latest_location+' Tweets</a>';
         twttr.widgets.load(document.getElementById("latest"));
       }
     });
