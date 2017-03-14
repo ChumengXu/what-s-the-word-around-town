@@ -83,7 +83,7 @@
   
   function UserLocation(){
     FB.api(
-    "/me/posts",'get',{"with": "location"},
+    "/me/posts",{"with": "location"},
     function (response) {
       if (response && !response.error) {
          console.log('Accessing feed ...');
@@ -101,7 +101,7 @@
 -->
 
 <fb:login-button scope="public_profile,email,user_posts" onlogin="checkLoginState();" 
-                 data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true">
+                 data-max-rows="1" data-size="xlarge" data-show-faces="true" data-auto-logout-link="true">
 </fb:login-button>
     
 <div id="status">
