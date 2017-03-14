@@ -120,7 +120,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         console.log(response.data[0]);
         var latest_location;
         if(response.data[0].place){
-          latest_location=response.data[0].place.name;
+          latest_location=response.data[0].place.name.split(',')[0].replace(/\s+/g, '');
         }
         else{
           latest_location= response.data[0].story.replace(/\s+/g, '').split('at')[1];
