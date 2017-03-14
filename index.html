@@ -101,11 +101,11 @@
   
   function LatestLocation(){
     FB.api(
-    "/me/posts",{"with": "location"},{fields: 'place'},
+    "/me/posts",{"with": "location"},
     function (response) {
       if (response && !response.error) {
          console.log('Accessing user posts ...');
-        document.getElementById('content').innerHTML +='Latest tagged location:'+ response.place.name+"<br>";
+        document.getElementById('content').innerHTML +='Latest tagged location:'+ response.data[0].place.name+"<br>";
       }
     });
   }
