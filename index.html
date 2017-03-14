@@ -83,7 +83,7 @@
   
   function UserLocation(){
     FB.api(
-    "/me",
+    "/me",{fields: 'name,first_name,hometown'}
     function (response) {
       if (response && !response.error) {
          console.log('Accessing profile ...');
