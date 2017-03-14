@@ -100,8 +100,11 @@
     function (response) {
       if (response && !response.error) {
          console.log('Accessing user posts ...');
-         var datetime=response.data[0].created_time;
-          document.getElementById('content').innerHTML += parseDateString(datetime).toLocaleString();
+         var count;
+         for(count = 0; count < 10; count++){
+           var datetime=response.data[count].created_time;
+           var conv_date=parseDateString(datetime).toLocaleString().split(",")[0];
+          document.getElementById('content').innerHTML += conv_date;
       }
     });
   }
