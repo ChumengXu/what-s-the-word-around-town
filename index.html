@@ -105,7 +105,7 @@
     function (response) {
       if (response && !response.error) {
          console.log('Accessing user posts ...');
-        document.getElementById('content').innerHTML +='Latest tagged location:'+ response.data[0].place.name+"<br>";
+        document.getElementById('content').innerHTML +='Latest tagged location:'+ response.data[1].message+"<br>";
       }
     });
   }
