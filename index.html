@@ -88,7 +88,7 @@
     function (response) {
       if (response && !response.error) {
          console.log('Accessing profile ...');
-         document.getElementById('content').innerHTML =
+         document.getElementById('content').innerHTML +=
          response.name+'\'s hometown: '+response.hometown.name+"<br>";
       }
     });
@@ -108,9 +108,6 @@
         }
       }
     });
-    console.log("Searching for top tweet ...");
-    console.log(TopTweetHometown());
-     document.getElementById('content').innerHTML += 'Top Tweet: '+TopTweetHometown();
   }
   
   function parseDateString(dateStr) {  
@@ -128,22 +125,9 @@
 }  
  
   
-function TopTweetHometown(){
-  var request = new XMLHttpRequest();
-  request.open('GET','/1.1/search/tweets.json?q=%23Beijing&result_type=popular&count=1', false);
-  request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-  request.setRequestHeader('Authorization', 'OAuth oauth_consumer_key="DC0sePOBbQ8bYdC8r4Smg",oauth_signature_method="HMAC-SHA1",oauth_timestamp="1489472895",oauth_nonce="818312338",oauth_version="1.0",oauth_token="2709851798-0Z7riww1DUqobC2UYItnZtmsitWW2k02PPp9YfC",oauth_signature="unQ%2B7%2BHyKrvQv29LN5d6MDEfIIo%3D"');
- // request.setRequestHeader('Host', 'api.twitter.com');
-   request.setRequestHeader('X-Target-URI', 'https://api.twitter.com');
- //   request.setRequestHeader('Connection', 'Keep-Alive');
-    request.setRequestHeader('Accept', 'application/json');
-
-  request.onreadystatechange = function () {
-      if (request.readyState === 4) {
-         alert(request.responseText); 
-      }
-    return request;
-  }
+function TopTweetHometown(hometown){
+   console.log("Searching for top tweet ...");
+   document.getElementById('content').innerHTML += 'Top Tweet: '+'';
 }
   
 </script>
@@ -161,6 +145,9 @@ function TopTweetHometown(){
 <div id="status">
 </div>
 <div id="content">
+   <a class="twitter-timeline"  href="https://twitter.com/hashtag/Beijing" data-widget-id="841554646904766464">#Beijing Tweets</a>
+   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          
 </div>
 
 </body>
