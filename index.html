@@ -96,15 +96,9 @@
           sourceType: 'url',
           url:'https://twitter.com/search?q=%23'+user_hometown+'%20until%3A2017-03-09'
         },
-        document.getElementById('twitter'),
-        {
-          width: '450',
-          height: '700',
-          tweetlimit:'1'
-        }).then(function (el) {
-          console.log('Embedded a timeline.')
-        });
-         twttr.widgets.load(document.getElementById("twitter"));
+        document.getElementById('twitter')
+        );
+        // twttr.widgets.load(document.getElementById("twitter"));
       }
     });    
   }
