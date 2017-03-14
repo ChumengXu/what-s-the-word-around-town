@@ -103,7 +103,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
          console.log('Accessing profile ...');
          var user_hometown=response.hometown.name.split(',')[0];
          document.getElementById('content').innerHTML +=
-         response.name+'\'s hometown:  '+'<span class=\"w3-tag\">'+user_hometown+'</span>'+"<br>";
+         response.name+'\'s hometown:  '+'<span class=\"w3-tag\">'+user_hometown+'</span>'+";       ";
            document.getElementById('twitter').innerHTML +=
         '<a class=\"twitter-timeline\"  href=\"https://twitter.com/hashtag/'+user_hometown+'\" data-widget-id=\"841554646904766464\">#'+user_hometown+' Tweets</a>';
         twttr.widgets.load(document.getElementById("twitter"));
@@ -170,7 +170,7 @@ function TopTweetHometown(hometown){
   the JavaScript SDK to present a graphical Login button that triggers
   the FB.login() function when clicked.
 -->
-
+<div everything align="center">
 <fb:login-button scope="public_profile,email,user_hometown,user_posts,user_location" onlogin="checkLoginState();" 
                  data-max-rows="1" data-size="xlarge" data-show-faces="true" data-auto-logout-link="true">
 </fb:login-button>
@@ -187,6 +187,6 @@ function TopTweetHometown(hometown){
 <div id="latest">
      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>         
   </div>
-
+</div>
 </body>
 </html>
