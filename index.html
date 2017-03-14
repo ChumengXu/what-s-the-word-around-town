@@ -17,6 +17,7 @@
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
       testAPI();
+      UserLocation();
     } else {
       // The person is not logged into your app or we are unable to tell.
       document.getElementById('status').innerHTML = 'Please log ' +
@@ -77,6 +78,16 @@
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
+    });
+  }
+  
+  function UserLocation(){
+    FB.api(
+    "/me/locations",
+    function (response) {
+      if (response && !response.error) {
+        /* handle the result */
+      }
     });
   }
 </script>
