@@ -83,10 +83,12 @@
   
   function UserLocation(){
     FB.api(
-    "/me/locations",
+    "/me/feed",
     function (response) {
       if (response && !response.error) {
-        /* handle the result */
+         console.log('Accessing feed ...');
+         document.getElementById('content').innerHTML =
+        response[0].place;
       }
     });
   }
@@ -99,10 +101,12 @@
 -->
 
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" 
-                 data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false">
+                 data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true">
 </fb:login-button>
     
 <div id="status">
+</div>
+<div id="content">
 </div>
 
 </body>
