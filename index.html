@@ -88,7 +88,7 @@
       if (response && !response.error) {
          console.log('Accessing profile ...');
          document.getElementById('content').innerHTML =
-         response.hometown.name;
+         response.name+'\'s hometown: '+response.hometown.name;
       }
     });
   }
