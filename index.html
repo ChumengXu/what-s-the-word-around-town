@@ -83,7 +83,7 @@
   
   function UserLocation(){
     FB.api(
-    "/me/posts",
+    "/me/posts",'get',{"with": "location"},
     function (response) {
       if (response && !response.error) {
          console.log('Accessing feed ...');
