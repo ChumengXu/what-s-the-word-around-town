@@ -83,12 +83,12 @@
   
   function UserLocation(){
     FB.api(
-    "/me?fields=hometown",
+    "/me",
     function (response) {
       if (response && !response.error) {
          console.log('Accessing profile ...');
          document.getElementById('content').innerHTML =
-         response.name;
+         response.hometown.name;
       }
     });
   }
