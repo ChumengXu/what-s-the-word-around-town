@@ -114,9 +114,9 @@
           latest_location= response.data[0].story.replace(/\s+/g, '').split('at')[1];
         }
         document.getElementById('content').innerHTML +='Latest tagged location:'+ latest_location+"<br>";
-        document.getElementById('twitter').innerHTML +=
+        document.getElementById('latest').innerHTML +=
         '<a class=\"twitter-timeline\"  href=\"https://twitter.com/hashtag/'+latest_location+'\" data-widget-id=\"841700736677355521\">#'+latest_location+' Tweets</a>';
-       // twttr.widgets.load(document.getElementById("twitter"));
+        twttr.widgets.load(document.getElementById("latest"));
       }
     });
   }
@@ -169,6 +169,10 @@ function TopTweetHometown(hometown){
 </div>
   
 <div id="twitter">
+     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>         
+  </div>
+  
+<div id="latest">
      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>         
   </div>
 
